@@ -7,21 +7,21 @@ resource "aws_security_group" "web_sg" {
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"] # Permite acesso HTTP de qualquer lugar
+    cidr_blocks = ["0.0.0.0/0"] # Allow HTTP 
   }
 
   ingress {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"] # Permite acesso SSH de qualquer lugar (ajuste para IPs específicos)
+    cidr_blocks = ["0.0.0.0/0"] # Sllow SSH
   }
 
   egress {
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"] # Permite saída para qualquer destino
+    cidr_blocks = ["0.0.0.0/0"] # Allow output Internet
   }
 
   tags = {

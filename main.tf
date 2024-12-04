@@ -11,7 +11,7 @@ module "ec2" {
   vpc_id          = module.vpc.vpc_id
   public_subnet   = module.vpc.public_subnet_ids[0]
   instance_type   = "t2.micro"
-  key_name        = "test-fintech" # Substitua pelo nome da sua chave SSH
+  key_name        = "test-fintech" 
 }
 
 module "cloudfront" {
@@ -19,4 +19,3 @@ module "cloudfront" {
   origin_domain  = module.ec2.instance_public_dns
 }
 
-#teste
